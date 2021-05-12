@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, tr
+            {
+                border: 4px solid black;
+                border-collapse: collapse;
+                background-color: cornflowerblue;
+
+            }
+
+            td
+            {
+                padding:5px;
+            }
+        </style>
+    </head>
+    <link rel="manifest" href="manifest.json">
+    <body>
+        <center>
+        <h1>Github Profile</h1>
+        <input type="text" id="text_input" placeholder="Enter username"></br></br>
+        <input type="button" onclick="gitdata()" value="Get Profile"></br></br>
+        <div id='git_image'>
+            <img src="" alt="" id="image">
+        </div>
+    </br>
+        <table id="mytable">
+            <tr>
+                <td>url</td>
+                <td id="url"></td>
+            </tr>
+            <tr>
+                <td>HTML url</td>
+                <td id="html_url"></td>
+            </tr>
+            <tr>
+                <td>Followers url</td>
+                <td id="followers_url"></td>
+            </tr>
+            <tr>
+                <td>Following url</td>
+                <td id="following_url"></td>
+            </tr>
+            <tr>
+                <td>Gists url</td>
+                <td id="gists_url"></td>
+            </tr>
+            <tr>
+                <td>Starred url</td>
+                <td id="starred_url"></td>
+            </tr>
+            <tr>
+                <td>Subscriptions url</td>
+                <td id="subscriptions_url"></td>
+            </tr>
+            <tr>
+                <td>Organisations url</td>
+                <td id="organisations_url"></td>
+            </tr>
+            <tr>
+                <td>Repos url</td>
+                <td id="repos_url"></td>
+            </tr>
+            <tr>
+                <td>Events url</td>
+                <td id="events_url"></td>
+            </tr>
+            <tr>
+                <td>Received events url</td>
+                <td id="received_events_url"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td id="type"></td>
+            </tr>
+            <tr>
+                <td>Site Admin</td>
+                <td id="site_admin"></td>
+            </tr>
+        </table>
+        </center>>
+    </body>
+<script>
+    function gitdata(){
+
+    var url='https://api.github.com/users/'+document.getElementById('text_input').value;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.avatar_url)
+        var im = document.getElementById("image");
+        im.setAttribute("src",data.avatar_url);
+        
+        document.getElementById('url').innerHTML=data.url;
+            document.getElementById('html_url').innerHTML=data.html_url;
+            document.getElementById('followers_url').innerHTML=data.followers;
+            document.getElementById('following_url').innerHTML=data.following;
+            document.getElementById('gists_url').innerHTML=data.gists_url;
+            document.getElementById('starred_url').innerHTML=data.starred_url;
+            document.getElementById('subscriptions_url').innerHTML=data.subscriptions_url;
+            document.getElementById('organisations_url').innerHTML=data.organizations_url;
+            document.getElementById('repos_url').innerHTML=data.Repositories;
+            document.getElementById('events_url').innerHTML=data.events_url;
+            document.getElementById('received_events_url').innerHTML=data.received_events_url;
+            document.getElementById('type').innerHTML=data.type;
+            document.getElementById('site_admin').innerHTML=data.site_admin;
+
+    })
+
+    .catch(function(response){
+        return response.status;
+        console.log(response.status);
+    });;
+    
+}
+</script>
+</html>
