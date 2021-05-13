@@ -1,0 +1,55 @@
+{
+  "name":"Stock Page",
+  "short_name": "Stock",
+  "description":"A Simple Stock Detail",
+  "start_url": "/index.html",
+  "display" : "standalone",
+  "theme_color":"#008080",
+  "background_color":"#2196f3",
+  "scope":"/",
+  "orientation":"portrait",
+  "icons":[
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"225x225",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"224x224",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"224x225",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"225x225",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"200x200",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"225x225",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"225x225",
+      "type":"image/png"
+    },
+    {
+      "src":"images/icons/s1.png",
+      "sizes":"225x225",
+      "type":"image/png"
+    }
+  ],
+
+  "splash_pages":null
+}
